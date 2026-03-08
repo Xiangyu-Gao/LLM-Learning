@@ -1,0 +1,29 @@
+# LoRA SFT configuration: rank 16
+# High capacity — closer to full fine-tuning quality, slower, larger adapters
+
+model:
+  name: "gpt2"
+  max_length: 512
+
+training:
+  batch_size: 4
+  learning_rate: 5e-4
+  epochs: 1
+  grad_accum: 4
+  seed: 42
+  output_dir: "results/lora-r16-alpha32"
+
+lora:
+  r: 16             # rank (adapter dimension)
+  alpha: 32         # scaling factor (2×r)
+  dropout: 0.05
+  target_modules: "c_attn,c_proj"
+
+data:
+  dir: "data"
+  max_samples: null
+  max_per_source: null
+
+swanlab:
+  project: "lora-sft-sweep"
+  mode: "local"          # "local" | "cloud" | "disabled"

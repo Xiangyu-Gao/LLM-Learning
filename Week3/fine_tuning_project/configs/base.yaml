@@ -1,0 +1,34 @@
+# Base configuration for experiments
+
+# model parameters
+model:
+  name: "gpt-2-small"  # change to preferred base
+  tokenizer: "gpt2"
+  max_length: 512
+
+# training hyperparameters
+training:
+  batch_size: 16
+  learning_rate: 5e-5
+  epochs: 3
+  seed: 42
+
+# data paths (relative to repo root)
+data:
+  train: "data/train.jsonl"
+  validation: "data/valid.jsonl"
+  test: "data/test.jsonl"
+
+# evaluation tasks (override in task-specific config)
+eval:
+  tasks: []
+
+# output and logging
+output:
+  results_dir: "results"
+  checkpoint_dir: "results/checkpoints"
+
+# miscellaneous
+misc:
+  device: "cuda"  # or cpu
+  fp16: false

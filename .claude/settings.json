@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda run -n llm-learning pip show bitsandbytes)",
+      "Bash(conda run -n llm-learning python -c \"import torch; print\\(torch.__version__\\); print\\(hasattr\\(torch.nn.Module, ''set_submodule''\\)\\)\")",
+      "Bash(conda run -n llm-learning pip install \"torch==2.5.1+cu121\" --index-url https://download.pytorch.org/whl/cu121 -q)",
+      "Bash(python -c \":*)"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+# LoRA SFT configuration: rank 8
+# Balanced capacity — good quality/speed tradeoff (recommended default)
+
+model:
+  name: "gpt2"
+  max_length: 512
+
+training:
+  batch_size: 4
+  learning_rate: 5e-4
+  epochs: 1
+  grad_accum: 4
+  seed: 42
+  output_dir: "results/lora-r8-alpha16"
+
+lora:
+  r: 8              # rank (adapter dimension)
+  alpha: 16         # scaling factor (2×r)
+  dropout: 0.05
+  target_modules: "c_attn,c_proj"
+
+data:
+  dir: "data"
+  max_samples: null
+  max_per_source: null
+
+swanlab:
+  project: "lora-sft-sweep"
+  mode: "local"          # "local" | "cloud" | "disabled"

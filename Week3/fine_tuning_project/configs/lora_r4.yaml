@@ -1,0 +1,29 @@
+# LoRA SFT configuration: rank 4
+# Low capacity — fastest training, smallest adapters, may underfit
+
+model:
+  name: "gpt2"
+  max_length: 512
+
+training:
+  batch_size: 4
+  learning_rate: 5e-4  # LoRA uses higher LR than full FT
+  epochs: 1
+  grad_accum: 4
+  seed: 42
+  output_dir: "results/lora-r4-alpha8"
+
+lora:
+  r: 4              # rank (adapter dimension)
+  alpha: 8          # scaling factor (typically 2×r)
+  dropout: 0.05
+  target_modules: "c_attn,c_proj"  # GPT-2 attention modules
+
+data:
+  dir: "data"
+  max_samples: null     # null = use all data
+  max_per_source: null  # null = no per-dataset limit
+
+swanlab:
+  project: "lora-sft-sweep"
+  mode: "local"          # "local" | "cloud" | "disabled"
