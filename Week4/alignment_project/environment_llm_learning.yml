@@ -1,0 +1,20 @@
+name: llm-learning
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pytorch
+  - pytorch-cuda=12.1
+  - pip:
+    - trl
+    - transformers
+    - datasets
+    - accelerate
+    - sentencepiece
+    - tokenizers
+    - pandas
+    - pyarrow

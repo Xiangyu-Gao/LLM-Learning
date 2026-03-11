@@ -1,0 +1,12 @@
+# Week 4: Alignment — DPO vs PPO vs GRPO
+# Install: pip install -r requirements.txt
+
+torch>=2.1.0
+transformers>=4.40.0
+trl>=0.29.0
+datasets>=2.16.0
+peft>=0.10.0
+accelerate>=0.27.0
+pandas>=2.0.0
+pyarrow>=14.0.0
+pyyaml>=6.0

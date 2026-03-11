@@ -1,0 +1,36 @@
+# DPO training configuration
+# ----------------------------
+# Pass to train_dpo.py with:  python src/train_dpo.py --config configs/dpo.yaml
+#
+# All values here override argparse defaults.
+# Omit a key to keep the argparse default.
+
+# Model paths
+model_name: "gpt2"
+sft_model_path: "../Week3/fine_tuning_project/results/sft-gpt2"
+
+# Data
+prefs_dir: "data/preferences"
+output_dir: "results/dpo-gpt2"
+
+# Training hyperparameters
+epochs: 1
+batch_size: 2
+grad_accum: 4
+lr: 1.0e-6
+max_length: 512
+seed: 42
+
+# DPO-specific
+# beta: KL regularisation coefficient.
+#   0.01 → strong preference pull, risk of mode collapse
+#   0.1  → balanced (default, recommended starting point)
+#   0.5  → conservative, stays close to SFT reference
+beta: 0.1
+
+# Quick test mode: set max_samples to a small number (e.g. 32) to verify
+# the pipeline runs end-to-end in ~1 minute.
+# max_samples: 32
+
+# Logging
+# eval_win_rate: true  # uncomment to compute win-rate after training

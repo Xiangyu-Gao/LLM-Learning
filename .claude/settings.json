@@ -4,7 +4,15 @@
       "Bash(conda run -n llm-learning pip show bitsandbytes)",
       "Bash(conda run -n llm-learning python -c \"import torch; print\\(torch.__version__\\); print\\(hasattr\\(torch.nn.Module, ''set_submodule''\\)\\)\")",
       "Bash(conda run -n llm-learning pip install \"torch==2.5.1+cu121\" --index-url https://download.pytorch.org/whl/cu121 -q)",
-      "Bash(python -c \":*)"
+      "Bash(python -c \":*)",
+      "Bash(conda run -n llm-learning python -c \":*)",
+      "Bash(stat /mnt/sdb/PROJECTS/LLM-Learning/Week4/alignment_project/results/*/model.safetensors)",
+      "Bash(stat /mnt/sdb/PROJECTS/LLM-Learning/Week4/alignment_project/results/*/pytorch_model.bin)",
+      "Bash(bash scripts/eval_all.sh --max_samples 2 --device cpu)",
+      "Bash(conda run -n llm-learning python - 2)",
+      "Bash(1:*)",
+      "Bash(conda run -n llm-learning python 2)",
+      "Bash(bash scripts/eval_all.sh --max_samples 5 --device cpu)"
     ]
   }
 }

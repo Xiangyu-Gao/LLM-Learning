@@ -1,0 +1,15 @@
+# Data (generated)
+data/preferences/
+
+# Results & checkpoints
+results/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Logs
+swanlog/
+wandb/
+*.log
