@@ -1,0 +1,21 @@
+# Day 3: MiniVLM training config
+# Usage: python src/day3_fusion.py --config configs/vlm.yaml
+
+clip_model_id: openai/clip-vit-base-patch32
+gpt2_model_id: gpt2
+
+fusion_modes:            # train both; comment out one to run faster
+  - prefix
+  - cross_attention
+
+num_vis_tokens: 4        # number of CLIP patch tokens used as visual prefix
+freeze_vision: true      # freeze CLIP backbone; only projection + GPT-2 train
+
+dataset: zh-plus/tiny-imagenet
+max_samples: 2000        # set lower (e.g. 200) for a quick smoke-test
+batch_size: 32
+lr: 2.0e-5
+epochs: 2
+max_steps: null          # null = run all steps; set int for quick testing
+
+results_dir: results

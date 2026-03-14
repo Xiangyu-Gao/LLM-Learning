@@ -1,0 +1,14 @@
+# Day 1: Mini-CLIP contrastive training config
+# Usage: python src/day1_clip.py --config configs/clip.yaml
+
+model_id: openai/clip-vit-base-patch32
+embed_dim: 512           # must equal CLIP_PROJ_DIM (512) for identity init
+temperature: 0.07        # InfoNCE temperature (initial value; learnable)
+
+dataset: zh-plus/tiny-imagenet
+max_samples: 200         # 200 classes → 200 unique (image, caption) pairs, no false negatives
+batch_size: 32
+lr: 1.0e-4
+epochs: 10
+
+results_dir: results/day1
