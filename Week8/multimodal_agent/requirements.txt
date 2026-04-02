@@ -1,0 +1,9 @@
+# Week 8 — Multi-Modal Tool Agent
+# Install: pip install -r requirements.txt
+
+anthropic>=0.40.0
+wikipedia>=1.4.0
+matplotlib>=3.8.0
+numpy>=1.26.0
+pillow>=10.0.0
+python-dotenv>=1.0.0
