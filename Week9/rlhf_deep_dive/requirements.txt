@@ -1,0 +1,7 @@
+# Week 9 — RLHF Mechanics Deep Dive
+# All packages are already installed in the llm-learning conda environment.
+# Listed here for documentation.
+
+torch>=2.5.0
+numpy>=1.26
+matplotlib>=3.8
