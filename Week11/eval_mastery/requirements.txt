@@ -1,0 +1,7 @@
+numpy>=1.24
+matplotlib>=3.7
+scipy>=1.10   # optional: Day 4 Spearman rank correlation (falls back gracefully)
+# Optional — for real BERTScore (drop-in replacement for chrf_score):
+#   pip install bert-score
+# Optional — for sentence-level embeddings:
+#   pip install sentence-transformers
