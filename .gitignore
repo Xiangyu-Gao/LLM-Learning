@@ -3,3 +3,4 @@ venv/
 *.parquet
 *.log
 **/.env
+**/.codex

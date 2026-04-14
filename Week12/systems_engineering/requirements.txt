@@ -1,0 +1,7 @@
+torch>=2.1
+transformers>=5.0
+numpy>=1.24
+matplotlib>=3.7
+# FSDP is included in torch — no separate package needed
+# Optional: deepspeed for ZeRO comparison
+#   pip install deepspeed
